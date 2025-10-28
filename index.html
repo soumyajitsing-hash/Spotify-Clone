@@ -1,17 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
-    <title>Document</title>
+    <title>'Spotify – Web Player'</title>
 </head>
+
 <body>
     <!-- <img src="logo.svg" alt=""> -->
-    <div class="container flex">
-        <div class="left border"></div>
-        <div class="right border"></div>
+    <div class="container flex bg-black">
+        <div class="left ">
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo">
+                    <img class="invert" src="logo.svg" alt="logo">
+                </div>
+                <ul>
+                    <li><img class="invert" src="home.svg" alt="home">Home</li>
+                    <li><img class="invert" src="search.svg" alt="search">Search</li>
+                </ul>
+            </div>
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="playlist.svg" alt="">
+                    <h2>
+                        Your Library
+                    </h2>
+                    <div class="footer">
+                        <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/legal/legal/privacy-policy/"><span>Privacy
+                                    Policy</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                        </div>
+                        <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right bg-grey rounded ">
+            <div class="header">
+                <div class="nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 6L9 12L15 18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="butt"
+                            stroke-linejoin="miter" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6L15 12L9 18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="butt"
+                            stroke-linejoin="miter" />
+                    </svg>
+
+
+                </div>
+                <div class="button">
+                    <button class="Signbtn">Sign up</button>
+                    <button class="Logbtn">Log in</button>
+                </div>
+            </div>
+            <div class="spotifyplaylist">
+                <h1>Spotify Playlist</h1>
+                <div class="cardContainter">
+                    <div class="card ">
+                        <div class="play">
+                            <svg class="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img"
+                                aria-label="Play button">
+                                <circle cx="60" cy="60" r="50" />
+                                <polygon points="50,42 50,78 86,60" />
+                            </svg>
+
+                        </div>
+                        <img src="https://i.scdn.co/image/ab67616d00001e029411c63637b6d976a7d0e279" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to boost your mood and fill you with happiness!</p>
+                    </div>
+                    <div class="card ">
+                        <img src="https://i.scdn.co/image/ab67616d00001e029411c63637b6d976a7d0e279" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to boost your mood and fill you with happiness!</p>
+                    </div>
+                    <div class="card ">
+                        <img src="https://i.scdn.co/image/ab67616d00001e029411c63637b6d976a7d0e279" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to boost your mood and fill you with happiness!</p>
+                    </div>
+
+                </div>
+                <div class="playbar">
+                    <div class="songinfo">
+                        
+                    </div>
+                    <div class="songbuttons">
+                        <img src="left.svg" alt="">
+                        <img src="start.svg" alt="">
+                        <img src="right.svg" alt="">
+                    </div>
+                    <div class="songtime">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
