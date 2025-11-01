@@ -18,21 +18,13 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currfolder = folder;
-    let a = await fetch(`/${folder}/`);
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-
-    let as = div.getElementsByTagName("a");
-    songs = []
-
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            let decodedHref = decodeURIComponent(element.href);
-            let filename = decodedHref.split(/[/\\]/).pop();
-            songs.push(filename);
-        }
+    try {
+        let a = await fetch(`/${folder}/info.json`);
+        if (!a.ok) throw new Error('Songs list not found');
+        songs = await a.json();
+    } catch (error) {
+        console.error('Error loading songs:', error);
+        songs = [];
     }
 
     // Display songs in the library
@@ -42,7 +34,7 @@ async function getSongs(folder) {
         songUL.innerHTML = songUL.innerHTML + `<li> 
                             <img class="invert" src="music-svgrepo-com.svg" width="40px" alt="">
                             <div class="info">
-                                <div>${song.replaceAll("%20", " ")}</div>
+                                <div>${song}</div>
                                 <div>Soum</div>
                             </div>
                             <div class="playnow">
@@ -51,7 +43,7 @@ async function getSongs(folder) {
                             </div>
                         </li>`;
     }
-    
+
     // Add click listeners to song items
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
@@ -85,12 +77,12 @@ async function displayAlbums() {
         const e = array[index];
         if (e.href.includes("/songs/") && !e.href.endsWith("/songs/")) {
             let folder = e.href.split("/").slice(-2)[0];
-            
-            // Fetch the info.json
+
+
             try {
                 let a = await fetch(`/songs/${folder}/info.json`);
                 let response = await a.json();
-                
+
                 cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card">
                     <div class="play">
                         <svg class="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img"
@@ -171,10 +163,11 @@ async function main() {
     });
 
     // Previous button
+    // Previous button
     previous.addEventListener("click", () => {
         currentSong.pause();
-        let currentTrack = currentSong.src.split("/").slice(-1)[0];
-        let index = songs.indexOf(decodeURIComponent(currentTrack));
+        let currentTrack = decodeURIComponent(currentSong.src.split("/").slice(-1)[0]);
+        let index = songs.indexOf(currentTrack);
         if ((index - 1) >= 0) {
             playMusic(songs[index - 1]);
         }
@@ -183,8 +176,8 @@ async function main() {
     // Next button
     next.addEventListener("click", () => {
         currentSong.pause();
-        let currentTrack = currentSong.src.split("/").slice(-1)[0];
-        let index = songs.indexOf(decodeURIComponent(currentTrack));
+        let currentTrack = decodeURIComponent(currentSong.src.split("/").slice(-1)[0]);
+        let index = songs.indexOf(currentTrack);
         if ((index + 1) < songs.length) {
             playMusic(songs[index + 1]);
         }
