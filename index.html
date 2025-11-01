@@ -13,9 +13,12 @@
     <!-- <img src="logo.svg" alt=""> -->
     <div class="container flex bg-black">
         <div class="left ">
+            <div class="close">
+                <img width="30px" height="30px" class="invert" src="cross-svgrepo-com.svg" alt="">
+            </div>
             <div class="home bg-grey rounded m-1 p-1">
                 <div class="logo">
-                    <img class="invert" src="logo.svg" alt="logo">
+                    <img class="invert" width="60" src="logo.svg" alt="logo">
                 </div>
                 <ul>
                     <li><img class="invert" src="home.svg" alt="home">Home</li>
@@ -28,32 +31,42 @@
                     <h2>
                         Your Library
                     </h2>
-                    <div class="footer">
-                        <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
-                        <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
-                        <div><a href="https://www.spotify.com/jp/legal/legal/privacy-policy/"><span>Privacy
-                                    Policy</span></a></div>
-                        <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
-                        <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a>
-                        </div>
-                        <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+                </div>
+                <div class="songList">
+                    <ul>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer">
+                    <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/legal/privacy-policy/"><span>Privacy
+                                Policy</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a>
                     </div>
+                    <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
                 </div>
             </div>
         </div>
         <div class="right bg-grey rounded ">
             <div class="header">
                 <div class="nav">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 6L9 12L15 18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="butt"
+                    <div class="hamburgerContainer">
+                        <img width="30px" height="30px" class="invert hamburger" src="burger-menu-svgrepo-com.svg" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 6L9 12L15 18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="butt"
                             stroke-linejoin="miter" />
-                    </svg>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M9 6L15 12L9 18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="butt"
+                        </svg>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 6L15 12L9 18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="butt"
                             stroke-linejoin="miter" />
-                    </svg>
-
+                        </svg>
+                        
+                    </div>
 
                 </div>
                 <div class="button">
@@ -64,7 +77,20 @@
             <div class="spotifyplaylist">
                 <h1>Spotify Playlist</h1>
                 <div class="cardContainter">
-                    <div class="card ">
+                    <div data-folder="cs" class="card ">
+                        <div  class="play">
+                            <svg class="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img"
+                                aria-label="Play button">
+                                <circle cx="60" cy="60" r="50" />
+                                <polygon points="50,42 50,78 86,60" />
+                            </svg>
+
+                        </div>
+                        <img src="https://i.scdn.co/image/ab67616d00001e029411c63637b6d976a7d0e279" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to boost your mood and fill you with happiness!</p>
+                    </div>
+                    <div data-folder="ncs" class="card ">
                         <div class="play">
                             <svg class="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img"
                                 aria-label="Play button">
@@ -77,29 +103,36 @@
                         <h2>Happy Hits!</h2>
                         <p>Hits to boost your mood and fill you with happiness!</p>
                     </div>
-                    <div class="card ">
-                        <img src="https://i.scdn.co/image/ab67616d00001e029411c63637b6d976a7d0e279" alt="">
-                        <h2>Happy Hits!</h2>
-                        <p>Hits to boost your mood and fill you with happiness!</p>
-                    </div>
-                    <div class="card ">
-                        <img src="https://i.scdn.co/image/ab67616d00001e029411c63637b6d976a7d0e279" alt="">
-                        <h2>Happy Hits!</h2>
-                        <p>Hits to boost your mood and filll you with happiness!</p>
-                    </div>
+                    
 
                 </div>
                 <div class="playbar">
-                    <div class="songinfo">
-                        
-                    </div>
-                    <div class="songbuttons">
-                        <img src="left.svg" alt="">
-                        <img src="start.svg" alt="">
-                        <img src="right.svg" alt="">
-                    </div>
-                    <div class="songtime">
+                    <div class="seekbar">
+                        <div class="circle">
 
+                        </div>
+                    </div>
+                    <div class="abovebar">
+                        <div class="songinfo">
+
+
+                        </div>
+                        <div class="songbuttons">
+                            <img id="previous" src="left.svg" alt="">
+                            <img id="play" src="start.svg" alt="">
+                            <img id="next" src="right.svg" alt="">
+                        </div>
+                        <div class="timevol">
+                        <div class="songtime">
+
+                        </div>
+                        <div class="volume">
+                            <img width="45px" height="45px" class="invert" src="volume-max-svgrepo-com.svg" alt="">
+                            <div class="range">
+                                <input type="range" name="volume" id="">
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
