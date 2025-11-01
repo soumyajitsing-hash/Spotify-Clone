@@ -119,6 +119,7 @@ body {
 .card img {
     width: 100%;
     object-fit: contain;
+    
 }
 
 .card>* {
